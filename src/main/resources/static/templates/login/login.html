@@ -1,0 +1,147 @@
+ <section style="background-image: url(assets/images/skf_back2.jpg);background-position: center;background-repeat: no-repeat;background-size: cover;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <div class="wrapper-page">
+
+                            <div class="account-pages" ng-show="loginPage">
+                                <div class="account-box">
+                                    <div class="account-logo-box">
+                                        <h2 class="text-uppercase text-center">
+                                            <a href="index.html" class="text-success">
+                                              <img src="image/adplogo.jpg" style="width: 83%;">
+                                              CUSTOMER
+                                            </a>
+                                        </h2>
+                                     
+                                    </div>
+                                   
+                                   <div class="account-content" style="margin-top: 10px; " >
+                                        <form class="form-horizontal" action="#">
+
+                                            <div class="form-group m-b-20 row">
+                                                <div class="col-12">
+                                                    <label for="emailaddress">User Name</label>
+                                                    <input class="form-control" type="text" ng-model="user.userId"id="emailaddress" required="" placeholder="User Name">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row m-b-20">
+                                                <div class="col-12">
+                                                  <!--   <a href="page-recoverpw.html" class="text-muted pull-right"><small>Forgot your password?</small></a> -->
+                                                    <label for="password">Password</label>
+                                                    <input class="form-control" type="password"  ng-model="user.password" required="" id="password" placeholder="Enter your password">
+                                                </div>
+                                            </div>
+
+                           
+
+                                            <div class="form-group row text-center m-t-10">
+                                                <div class="col-12">
+                                                    <button class="btn btn-md btn-block btn-primary waves-effect waves-light"  ng-click="vm.doLogin(user)" type="submit">Sign In</button>
+                                                </div>
+                                            </div>
+												 <div class="form-group row text-center m-t-10">
+                                                <div class="col-12">
+                                                    <button class="btn btn-md btn-block btn-dark waves-effect waves-light"  ng-click="vm.registerMe()" type="submit">Register me</button>
+                                                </div>
+                                            </div>	
+										                 <div class="form-group row m-b-20">
+                                             <div class="col-12">
+                                            <div class="row">                                               
+													
+												<div class="col-6" style="margin-left:35%; margin-top:0%">
+												 <a ng-click="forgotPass()"  >
+                                                <span>Forget Password</span>
+                                             </a>
+												</div>
+												
+												
+												</div>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                      <div class="row m-t-50">
+                                            <div class="col-sm-12 text-center">
+                                             <p class="text-muted"> Powered By<a href="http://www.a2mee.com/"> <b>A2MEE</b>- Appoint to mee</a></p>
+                                              <img alt="" src="image/a2mee-logo.png">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                  
+                                    
+                                    
+                        <!-- Forget Password  functionality endt-->
+                                    
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            <div class="account-pages" ng-show="registerTab">
+                                <div class="account-box">
+                                    <div class="account-logo-box">
+                                        <h2 class="text-uppercase text-center">
+                                            <a href="index.html" class="text-success">
+                                           Customer Registration
+                                            </a>
+                                        </h2>
+                                     
+                                    </div>
+                                    <div class="account-content" style="margin-top: 10px; " >
+                                      
+
+                                            <div class="form-group m-b-20 row">
+                                                <div class="col-12">
+                                                    <label for="emailaddress">Company  Name</label>
+                                                    <input class="form-control" type="text" ng-model="customer.companyName"id="companyName" name="companyName" placeholder="Company Name">
+                                                </div>
+                                                
+                                                 <div class="col-12">
+                                                    <label for="emailaddress">Email </label>
+                                                    <input class="form-control" type="text" ng-model="customer.emailId"id="emailId" name="emailId" placeholder="Enter Email Id">
+                                                </div>
+                                                 <div class="col-12">
+                                                    <label for="emailaddress">Phone No</label>
+                                                    <input class="form-control" type="text" ng-model="customer.phoneNo"id="phoneNo" name="phoneNo" placeholder="Company Name">
+                                                </div>
+                                            </div>
+
+                                            
+
+                           
+
+                                            <div class="form-group row text-center m-t-10">
+                                                <div class="col-12">
+                                                    <button class="btn btn-md btn-block btn-primary waves-effect waves-light"  ng-click="vm.register(customer)" >Save</button>
+                                                </div>
+                                            </div>
+													
+                                      
+
+                                      
+
+                                    </div>
+                             
+                                  
+                                    
+                                    
+                        <!-- Forget Password  functionality endt-->
+                                    
+                                    
+                                </div>
+                            </div>
+                            <!-- end card-box-->
+
+                        </div>
+                        <!-- end wrapper -->
+
+                    </div>
+                </div>
+            </div>
+          </section>
+          <!-- END HOME -->

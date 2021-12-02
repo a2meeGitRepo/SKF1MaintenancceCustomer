@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:property-placeholder location="classpath:database.properties"/> 
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${database.driverClassName}" />
+		<property name="url" value="${database.url}" />
+		<property name="username" value="${database.username}" />
+		<property name="password" value="${database.password}" />
+	</bean>
+	
+	<bean id="localSessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+	    <property name="dataSource" ref="dataSource"/>
+	    <property name="hibernateProperties">
+			<props>
+			   <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+			   <prop key="hibernate.id.new_generator_mappings">${hibernate.id.new_generator_mappings}</prop>
+			   <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+			   <prop key="hibernate.format_sql">${hibernate.format_sql}</prop>	
+			   <prop key="hibernate.default_schema">${hibernate.default_schema}</prop>		   
+			</props>
+	    </property>
+        <property name="packagesToScan" value="com.net.entity"/> 
+	</bean>
+	<bean id="txManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+	    <property name="sessionFactory" ref="localSessionFactory" />
+	</bean>
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+		<constructor-arg name="sessionFactory" ref="localSessionFactory"/>  
+	</bean>
+	
+	<bean id="userDao" class="com.net.dao.UserDao" />
+	<bean name="userService" class="com.net.services.UserService">
+		<constructor-arg index="0" ref="userDao"></constructor-arg>
+	</bean>
+	<bean id="departmentDao" class="com.net.dao.DepartmentDao" />
+	<bean name="departmentService" class="com.net.services.DepartmentService">
+		<constructor-arg index="0" ref="departmentDao"></constructor-arg>
+	</bean>
+	<bean id="supplierDao" class="com.net.dao.SupplierDao" />
+	<bean name="supplierService" class="com.net.services.SupplierService">
+		<constructor-arg index="0" ref="supplierDao"></constructor-arg>
+	</bean>
+	
+	<bean id="categoryDao" class="com.net.dao.CategoryDao" />
+	<bean name="categoryService" class="com.net.services.CategoryService">
+		<constructor-arg index="0" ref="categoryDao"></constructor-arg>
+	</bean>
+	
+	<bean id="assetDao" class="com.net.dao.AssetDao" />
+		<bean id="itemDao" class="com.net.dao.ItemDao" />
+	<bean id="assetUnitDao" class="com.net.dao.AssetUnitDao" />
+	<bean name="assetService" class="com.net.services.AssetService">
+		<constructor-arg index="0" ref="assetDao"></constructor-arg>
+	</bean>
+	
+	
+	<bean id="assetDepartmentAssingDao" class="com.net.dao.AssetDepartmentAssingDao" />
+	<bean name="assetDepartmentAssingService" class="com.net.services.AssetDepartmentAssingService">
+		<constructor-arg index="0" ref="assetDepartmentAssingDao"></constructor-arg>
+	</bean>
+	
+	
+	
+	
+	<bean id="dashboardDao" class="com.net.dao.DashboardDao" />
+	<bean name="dashboardService" class="com.net.services.DashboardService">
+	</bean>
+	<bean id="reportDao" class="com.net.dao.ReportDao" />
+	<bean name="reportService" class="com.net.services.ReportService">
+	</bean>
+	<tx:annotation-driven transaction-manager="txManager" /> 		
+</beans> 

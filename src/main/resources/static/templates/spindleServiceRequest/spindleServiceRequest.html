@@ -1,0 +1,676 @@
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+ 
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+.button-style{
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.rowText{
+text-align:center;
+color:#424949;
+font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
+Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+th{
+background-color:#73C6B6;
+color:white;
+text-align:center;
+font-size:14px;
+font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
+Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card-box{
+border: 2px solid #73C6B6;
+border-radius:10px;
+
+}
+
+tr:hover{
+background-color:#FFFFFF;
+box-shadow: 0 4px 8px 0 #76D7C4, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+i:hover{
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+} 
+
+input:hover{
+background-color:#F4F6F6;
+border:2px solid #2C3E50;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+select:hover{
+background-color:#F4F6F6;
+border:2px solid #2C3E50;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input.mandtry:hover{
+background-color:#F4F6F6;
+border:2px solid #2C3E50;
+box-shadow: 0 4px 8px 0 #FFAFAA, 0 6px 20px 0 #FFAFAA;
+}
+
+select.mandtry:hover{
+background-color:#F4F6F6;
+border:2px solid #2C3E50;
+box-shadow: 0 4px 8px 0 #FFAFAA, 0 6px 20px 0 #FFAFAA;
+}
+textarea:hover{
+background-color:#F4F6F6;
+border:2px solid #2C3E50;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.avatar{
+vertical-align: middle;
+  width: 100px;
+  height: 90px;
+  border-radius: 10%;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input{
+border:2px solid #EAEDED;
+border-radius:20px;
+font-size:14px;
+ffont-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
+Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+label{
+font-size:14px;
+font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
+Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+hr{
+font-size:18px;
+border-top:1px solid #F5B041 ;
+
+}
+
+.vl{
+border-left: 2px solid #F0B27A;
+  height: 20px;
+ margin-left:100px;
+}
+
+</style>
+    <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box button-style">
+                                    <h4 class="page-title float-left">Spindle Service  Request</h4>
+
+                                     <ol class="breadcrumb float-right">
+                                  		<li class="breadcrumb-item active"><button type="button" class="btn btn-primary btn-rounded w-md waves-effect waves-light button-style" id="tooltip-touch" title="Add New Supplier" ng-click="vm.add()">Add New </button></li>
+                                    </ol>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+                            </div>
+                        </div>
+                        
+
+                        
+<!-- start add  row -->
+                          <div class="row" ng-show="addNew" style="margin-right: 10px;
+  margin-left: 10px;" >
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    
+
+                                   				 <div class="row">
+						                            <div class="col-md-12">
+						                                <div class="card-box">
+						                                <h1 class="card-header" style="text-align: center;padding-top:-10px;">Spindle Service Request Registration</h1>						                                   
+
+						                                   
+						 									
+						                                    <form class="card-body'" style="padding-top:30px;padding-bottom:20px;">
+						                                   	                                   <legend class="dotted"">Spindle Details</legend>
+						                                        
+						                                          <div class="form-row">						                                          
+						                                          
+						                                           <div class="form-group col-md-3">
+						                                                <label for="inputCity" class="col-form-label">Serial No</label> 
+						                                                <input type="text" class="form-control mandtry" id="serialNo" ng-model="spindleServiceRequest.serialNo"   placeholder="Enter Serial No" ng-disabled="editView">
+						                                             <span ng-show="serialNoErr" style="color:red">  * Serial No is mandatory</span>
+						                                              <span ng-show="duplicateSpindleErr" style="color:red">  * Serial no already exits</span>
+						                                            </div>
+						                                            
+						                                       		 <div class="form-group col-md-3">
+						                                                <label for="inputCity" class="col-form-label">Spindle Brand</label>
+						                                                <input type="text" class="form-control mandtry" id="spindleBrand" ng-model="spindleServiceRequest.spindleBrand"   placeholder="Enter Spindle Brand" >
+						                                             <span ng-show="spindleBrandErr" style="color:red">  * Spindle Brand is mandatory</span>
+						                                            </div>
+						                                             <div class="form-group col-md-3">
+						                                                <label for="inputCity" class="col-form-label">Spindle Model </label>
+						                                                <input type="text" class="form-control mandtry" id="spindleModel" ng-model="spindleServiceRequest.spindleModel"   placeholder="Enter Spindle Model" >
+						                                             <span ng-show="spindleModelErr" style="color:red">  * Spindle Model is mandatory</span>
+						                                            </div>
+						                                          <div class="form-group col-md-3">
+						                                                <label for="inputCity" class="col-form-label">Machine Brand</label>
+						                                                <input type="text" class="form-control mandtry" id="machineBrand" ng-model="spindleServiceRequest.machineBrand"   placeholder="Enter Machine Brand" >
+						                                             <span ng-show="machineBrandErr" style="color:red">  * Machine Brand is mandatory</span>
+						                                            </div>
+						                                               
+						                                          
+						                                           
+						                                        </div>
+						                                        
+						                                       
+						                                    <div class="form-row">
+						                                    
+						                                      
+						                                    <div class="form-group col-md-3">
+						                                                <label for="inputCity" class="col-form-label">Machine Model</label> 
+						                                                <input type="text" class="form-control mandtry" id="machineModel" ng-model="spindleServiceRequest.machineModel"   placeholder="Enter Machine Model" >
+						                                             <span ng-show="machineModelErr" style="color:red">  * Machine Model is mandatory</span>
+						                                            </div>
+						                                            
+						                                       		 <div class="form-group col-md-3">
+						                                                <label for="inputCity" class="col-form-label">Power</label>
+						                                                <input type="text" class="form-control mandtry" id="power" ng-model="spindleServiceRequest.power"   placeholder="Enter Power" ng-blur="capitalName(customer.companyName)">
+						                                             <span ng-show="powerErr" style="color:red">  * Power is mandatory</span>
+						                                            </div>
+						                                             <div class="form-group col-md-3">
+						                                                <label for="inputCity" class="col-form-label">Max Speed</label>
+						                                                <input type="text" class="form-control mandtry" id="maxSpeed" ng-model="spindleServiceRequest.maxSpeed"   placeholder="Enter Max Speed" >
+						                                             <span ng-show="maxSpeedErr" style="color:red">  * Max Speed is mandatory</span>
+						                                            </div>
+						                                          <div class="form-group col-md-3">
+						                                                <label for="inputCity" class="col-form-label">Operating Speed</label>
+						                                                <input type="text" class="form-control mandtry" id="operatingSpeed" ng-model="spindleServiceRequest.operatingSpeed"   placeholder="Enter Operating Speed" >
+						                                             <span ng-show="operatingSpeedErr" style="color:red">  *Operating Speed is mandatory</span>
+						                                            </div>
+						                                    
+						                                          					                                           						                               		 									
+						                                           
+						                                        </div>
+						                                        
+						                                         <div class="form-row">
+						                                    
+						                                      
+						                                    <div class="form-group col-md-3">
+						                                                <label for="inputCity" class="col-form-label">Poles</label> 
+						                                                <input type="text" class="form-control mandtry" id="poles" ng-model="spindleServiceRequest.poles"   placeholder="Enter Poles" >
+						                                             <span ng-show="polesErr" style="color:red">  * Poles is mandatory</span>
+						                                            </div>
+						                                            
+						                                       		 <div class="form-group col-md-3">
+						                                                <label for="inputCity" class="col-form-label">Tool Taper</label>
+						                                                <input type="text" class="form-control mandtry" id="toolTaper" ng-model="spindleServiceRequest.toolTaper"   placeholder="Enter Power" ng-blur="capitalName(customer.companyName)">
+						                                             <span ng-show="toolTaperErr" style="color:red">  * Tool Taper is mandatory</span>
+						                                            </div>
+						                                             <div class="form-group col-md-3">
+						                                                <label for="inputCity" class="col-form-label">Current</label>
+						                                                <input type="text" class="form-control mandtry" id="current" ng-model="spindleServiceRequest.current"   placeholder="Enter Current" >
+						                                             <span ng-show="currentErr" style="color:red">  * Current is mandatory</span>
+						                                            </div>
+						                                          <div class="form-group col-md-3">
+						                                                <label for="inputCity" class="col-form-label">Voltage</label>
+						                                                <input type="text" class="form-control mandtry" id="voltage" ng-model="spindleServiceRequest.voltage"   placeholder="Enter Voltage" >
+						                                             <span ng-show="voltageErr" style="color:red">  *Operating Speed is mandatory</span>
+						                                            </div>
+						                                    
+						                                          					                                           						                               		 									
+						                                           
+						                                        </div>
+						                                        <div class="form-row">
+						                                    
+						                                      
+						                                    <div class="form-group col-md-3">
+						                                                <label for="inputCity" class="col-form-label">Lubrication</label> 
+						                                                <select class="form-control mandtry"
+																			ng-model="spindleServiceRequest.lubrication" id="lubrication"
+																		
+																			style="height: calc(2.25rem + 14px)" required>
+																			<option value="" disabled selected>Select Lubrication </option>
+																			<option value="Grease" >Grease </option>
+																			<option value="Oil-Air" >Oil-Air</option>
+																			<option value="Oil-Mist" >Oil-Mist</option>
+																		</select>
+						                                             <span ng-show="lubricationErr" style="color:red">  * Lubrication is mandatory</span>
+						                                            </div>
+						                                            
+						                                       		 <div class="form-group col-md-3">
+						                                                <label for="inputCity" class="col-form-label">Assembly Drawing</label>
+																		<select class="form-control mandtry"
+																			ng-model="spindleServiceRequest.assemblyDrawing" id="assemblyDrawing"
+																		
+																			style="height: calc(2.25rem + 14px)" required>
+																			<option value="" disabled selected>Select Assembly Drawing </option>
+																			<option value="YES" >YES </option>
+																			<option value="NO" >NO</option>
+																		</select>
+																	 <span ng-show="assemblyDrawingErr" style="color:red">  * Assembly Drawing is mandatory</span>
+																								                                             
+						                                            </div>
+						                                             
+						                                    
+						                                          					                                           						                               		 									
+						                                           
+						                                        </div>
+						                                   <!-- -----------------------------------------1------------------------------ -->
+						                                   <legend class="dotted"">Service Details</legend>
+						                                        
+						                                          <div class="form-row">						                                          
+						                                          
+						                                            <div class="form-group col-md-4">
+						                                                <label for="inputState" class="col-form-label">Branch</label> 
+						                                               <select class="form-control mandtry"
+																			ng-model="spindleServiceRequest.branch.branchId" id="branch"
+																			ng-options="branch.branchId as branch.branchName for branch in vm.branches"
+																			style="height: calc(2.25rem + 3px);margin-top: -5px;" required>
+																			<option value="" disabled selected>Select Branch</option>
+																		</select>
+																		<span ng-show="branchErr" style="color:red">  * Branch is mandatory</span>
+						                                            </div>
+						                                             
+						                                           
+						                                        </div>
+						                                        
+						                                       
+						                                    <div class="form-row">
+						                                    
+						                                      
+						                               			   <div class="form-group col-md-4">
+						                                                <label for="inputState" class="col-form-label">Service Reason</label> 
+						                                               <select class="form-control mandtry"
+																			ng-model="spindleServiceRequest.reason.reasonId" id="reason"
+																			ng-options="serviceReson.reasonId as serviceReson.reasonName for serviceReson in vm.serviceResons"
+																			style="height: calc(2.25rem + 14px);margin-top: -5px;" required>
+																			<option value="" disabled selected>Select Service Reason</option>
+																		</select>
+																		<span ng-show="reasonErr" style="color:red">  * Service Reason is mandatory</span>
+						                                            </div>
+						                                       		 <div class="form-group col-md-4">
+						                                                <label for="inputState" class="col-form-label">Spindle Design</label>
+						                                               <select class="form-control mandtry"
+																			ng-model="spindleServiceRequest.spindleDesign" id="spindleDesign"
+																		
+																			style="height: calc(2.25rem + 14px)" required>
+																			<option value="" disabled selected>Select Spindle Design </option>
+																			<option value="Complete Unit" >Complete Unit </option>
+																			<option value="Plain Shaft" >Plain Shaft </option>
+																			<option value="Free Rear End" >Free Rear End </option>
+																		</select>
+																		<span ng-show="designErr" style="color:red">  * Spindle Design is mandatory</span>
+						                                            </div>
+						                                              <div class="form-group col-md-4">
+						                                                <label for="inputState" class="col-form-label">Application</label>
+						                                               <select class="form-control mandtry"
+																			ng-model="spindleServiceRequest.application" id="application"
+																		
+																			style="height: calc(2.25rem + 14px)" required>
+																			<option value="" disabled selected>Select Application</option>
+																			<option value="Surface Grinder" >Surface Grinder</option>
+																			<option value="Machining center" >Machining center </option>
+																			<option value="Centerless grinder" >Centerless grinder </option>
+																			<option value="Lathe" >Lathe</option>
+																			<option value="Bore grinder" >Bore grinder</option>
+																			<option value="Work spindle" >Work spindle</option>
+																			<option value="Other" >Other</option>
+																		</select>
+																		<span ng-show="appilcationErr" style="color:red">  * Application is mandatory</span>
+						                                            </div>
+						                                      
+						                                    
+						                                          					                                           						                               		 									
+						                                           
+						                                        </div>
+						                                        
+						                                         <div class="form-row">
+						                                    
+						                                      
+						                                    		  <div class="form-group col-md-4">
+						                                                <label for="inputState" class="col-form-label">Drive</label>
+						                                               <select class="form-control mandtry"
+																			ng-model="spindleServiceRequest.drive" id="drive"
+																		
+																			style="height: calc(2.25rem + 14px)" required>
+																			<option value="" disabled selected>Select Drive</option>
+																			<option value="Belt/Direct" >Belt/Direct</option>
+																			<option value="Integrated" >Integrated center </option>
+																			
+																		</select>
+																		<span ng-show="driveErr" style="color:red">  * Drive is mandatory</span>
+						                                            </div>
+						                                 	
+						                                             <div class="form-group col-md-4">
+						                                                <label for="inputState" class="col-form-label">Mounting type</label>
+						                                               <select class="form-control mandtry"
+																			ng-model="spindleServiceRequest.moutingType" id="moutingType"
+																		
+																			style="height: calc(2.25rem + 14px)" required>
+																			<option value="" disabled selected>Select Mounting type</option>
+																			<option value="Cartridge spindle" >Cartridge spindle</option>
+																			<option value="Block spindle" >Block spindle </option>
+																			
+																		</select>
+																		<span ng-show="mountingErr" style="color:red">  * Mounting type is mandatory</span>
+						                                            </div>
+						                                             <div class="form-group col-md-4">
+						                                                <label for="inputState" class="col-form-label">Orientation</label>
+						                                               <select class="form-control mandtry"
+																			ng-model="spindleServiceRequest.orientation" id="brand"
+																		
+																			style="height: calc(2.25rem + 14px)" required>
+																			<option value="" disabled selected>Select Orientation</option>
+																			<option value="Horizontal" >Horizontal</option>
+																			<option value="Vertical" >Vertical</option>
+																			
+																		</select>
+																		<span ng-show="orientationErr" style="color:red">  * Orientation is mandatory</span>
+						                                            </div>
+						                                         
+						                                          					                                           						                               		 									
+						                                           
+						                                        </div>
+						                                         <div class="form-row"></div>
+						                                        <div class="form-row">
+								                                     <div class="form-group col-md-6">
+								                                     		 <button type="button" class="btn btn-sm btn-primary btn-rounded w-md waves-effect waves-light button-style pull-right" style="margin:10px" id="tooltip-touch" title="Add New " ng-click="vm.addfrontBearing()">Add New </button>
+								                                     
+																		    <table id="datatable-buttons" class="table table-responsive table-hover shadow p-4 mb-4 bg-white" cellspacing="0" width="100%" style=" border: 1px solid #dee2e6;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+										                                        <thead>
+										                                        <tr>
+										                                            <th class="text-center">Sr No</th>
+										                                            <th class="text-center">Bearing designation – front (if know n)o</th>
+										                                            <th class="text-center">Pcs</th>
+										                                            
+										                                            <th class="text-center" >Action</th>
+										                                        
+										                                        </tr>
+										                                        </thead>
+										
+										
+										                                        <tbody>
+										                                        <tr ng-show="frontBearings.length <= 0"><td colspan="8" style="text-align:center;color:#5D6D7E;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Data Not Found!!
+																				<tr ng-repeat="bearing in frontBearings">
+																	
+										                                           <td class="text-center rowText">{{(vm.perPage*(vm.pageno-1))+($index+1)}}</td>
+										                                           <td>
+										                                         	<input type="text" class="form-control mandtry" id="fdetials" ng-model="bearing.detials"   placeholder="Enter bearing detials" >
+										                                          </td>
+										                                          <td>
+										                                          	<input type="text" class="form-control mandtry" id="fqty" ng-model="bearing.qty"   placeholder="Enter PCs" >
+										                                          	</td>
+										                                             <td>
+										                                           <md-button class="md-icon-button btn-sm" aria-label="Favorite" style="margin:0 0.5px;"><i class='fas fa-trash'  id="tooltip-touch" title="Delet" ng-click="vm.deletfrontRearBearing($index)" style="font-size:20px;color:#ff0101;"></i></md-button>
+										                                           </td>
+										                                           
+										                                          
+										                                       </tr>
+										                                      
+										                                        </tbody>
+										                                    </table>
+																		 
+								                                     </div>
+								                                     <div class="form-group col-md-6">
+								                                     
+								                                     <button type="button" class="btn btn-sm btn-primary btn-rounded w-md waves-effect waves-light button-style pull-right" style="margin:10px" id="tooltip-touch" title="Add New " ng-click="vm.addRearBearing()">Add New </button>
+								                                     
+																		    <table id="datatable-buttons" class="table table-responsive table-hover shadow p-4 mb-4 bg-white" cellspacing="0" width="100%" style=" border: 1px solid #dee2e6;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+										                                        <thead>
+										                                        <tr>
+										                                            <th class="text-center">Sr No</th>
+										                                            <th class="text-center">Bearing designation – Rear (if know n)o</th>
+										                                            <th class="text-center">Pcs</th>
+										                                            
+										                                            <th class="text-center" >Action</th>
+										                                        
+										                                        </tr>
+										                                        </thead>
+										
+										
+										                                        <tbody>
+										                                        <tr ng-show="rearBearings.length <= 0"><td colspan="8" style="text-align:center;color:#5D6D7E;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Data Not Found!!
+																				<tr ng-repeat="bearing in rearBearings">
+																	
+										                                           <td class="text-center rowText">{{$index+1}}</td>
+										                                          <td class="text-center rowText">
+										                                          	<input type="text" class="form-control mandtry" id="rdetials" ng-model="bearing.detials"   placeholder="Enter bearing detials" >
+										                                          	</td>
+										                                          	<td>
+										                              
+										                                          	<input type="text" class="form-control mandtry" id="rqty" ng-model="bearing.qty"   placeholder="Enter PCs" >
+										                                          	
+										                                          
+										                                           </td>
+										                                           <td>
+										                                           <md-button class="md-icon-button btn-sm" aria-label="Favorite" style="margin:0 0.5px;"><i class='fas fa-trash'  id="tooltip-touch" title="Delet" ng-click="vm.deletRearBearing($index)" style="font-size:20px;color:#ff0101;"></i></md-button>
+										                                           </td>
+										                                           
+										                                          
+										                                       </tr>
+										                                      
+										                                        </tbody>
+										                                    </table>
+																		 
+								                                     </div>
+								                                      
+						                                   
+						                                             
+						                                    
+						                                          					                                           						                               		 									
+						                                           
+						                                        </div>
+						                                        <div class="form-row">
+						                                        <div class="form-group col-md-6">
+						                                      			  <label for="inputCity" class="col-form-label">Replacement spindle available</label></br>
+						                                      			  <input type="checkbox" class="c_check"  ng-model ="resplacement.yes" ng-click="checkReplacementYes(resplacement.yes)" > YES
+						                                      			  
+						                                      			  <input type="checkbox" class="c_check"  style="margin-left: 59px"   ng-model ="resplacement.no" ng-click="checkReplacementNo(resplacement.no)" > NO
+						                                       </br>	<span ng-show="replacementErr" style="color:red">  * Replacement is mandatory</span>	
+						                                       
+						                                        </div>	
+						                                        
+						                                        <div class="form-group col-md-6">
+						                                      			  <label for="inputCity" class="col-form-label">Service Requested</label></br>
+						                                      			  <input type="checkbox" class="c_check"  ng-model ="serRequested.standard" ng-click="checkReplacementStandard(serRequested.standard)" > Standard
+						                                      			  
+						                                      			  <input type="checkbox" class="c_check"  style="margin-left: 59px"   ng-model ="serRequested.emergency" ng-click="checkReplacementEmergency(serRequested.emergency)" > Emergency
+						                                      			  	 	</br>	<span ng-show="serviceReErr" style="color:red">  * Service Requested is mandatory</span>																	<span ng-show="orientationErr" style="color:red">  * Orientation is mandatory</span>
+						                                      			  
+						                                        </div>	
+						                                        </div>					                                     
+						                                           
+						                                          <div class="form-row">
+						                                          
+						                                          	   <div class="form-group col-md-12">
+						                                                <label for="inputCity" class="col-form-label">Addtional Detial</label>
+						                                                <textarea class="form-control " id="additionDetials" ng-model="spindleServiceRequest.additionDetials"   placeholder="Enter Addtional Details" ></textarea>
+						                                            </div>
+						                                          
+						                                          
+						                                          
+						                                          
+						                                          </div>
+						                                      
+						                           <!-- -----------------------------------------2------------------------------ -->
+	
+		
+						                   
+						                                        
+						                                        
+						                                       
+						                                       
+						                                        <div class="form-row">					                                            
+						                                            
+						                                           
+						                                        </div>
+						                                        <div class="row">
+						                                        </div>
+						                                         <div class="row card-footer" >
+						                                      
+						                                         <div class="form-group col-md-0" style="margin-top:20px;margin-left:450px;">
+						                                         	 <button type="button" class="btn btn-success btn-rounded waves-effect w-md waves-light button-style" type="submit" ng-click="vm.save(spindleServiceRequest)" ng-show="!editView" ng-disabled="disabledClick"><i class='fas fa-save' style='font-size:16px;margin:0 2px;'></i>Save</button>
+						                                        	 <button type="button" class="btn btn-success btn-rounded waves-effect w-md waves-light button-style" type="submit" ng-click="vm.save(spindleServiceRequest)" ng-show="editView" ng-disabled="disabledClick"><i class='fas fa-save' style='font-size:16px;margin:0 2px;'></i>Save</button>
+						                                         
+						                                         </div>
+						                                         <div class="form-group col-md-4" style="margin-top:20px;margin-left:50px;">
+						                                         		   <button type="button" class="btn btn-danger btn-rounded waves-effect w-md waves-light button-style" ng-click="vm.cancle()">Cancel</button>
+						                                          </div>
+						                                       
+						                                        </div>
+						                                       
+						                                    </form>
+						                                </div>
+						                            </div>
+						                        </div>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                            <!-- end add row -->
+                        <div class="row"  style="margin-right: 10px;margin-bottom:10px
+  ;margin-left: 10px;">
+								<div class="col-8">
+					              <label for="search">Search:</label>
+					              <input ng-model="search" id="search"  ng-change="searchByPagination(search)"class="form-control" placeholder="Filter text()">
+					            </div>
+					            <div class="col-4 pull-right">
+					              <label for="search">items per page:</label>
+					              <input type="number" min="1" max="100" class="form-control" ng-model="vm.perPage">
+					            </div>
+           				 </div>
+                        <div class="row" style="margin-right: 10px;
+  margin-left: 10px;">
+                            <div class="col-12">
+                                <div class="card-box table-responsive">
+                                  <h4 class="m-t-0 header-title"><b>                                  
+                                  <button type="button" class="btn btn-primary btn-rounded w-md waves-effect waves-light button-style" id="tooltip-touch" title="Export Excel" ng-click="newExcel()" style="margin-top: 0.5%;margin-left: 1%;"><i class="fa fa-file-excel-o" style="font-size:18px;margin:0 2px;"></i>   Export Excel</button>
+						       <button id="btnExport" ng-json-export-excel data="vm.allSpindleServiceRequests" report-fields="vm.labels" style="display:none" filename="'Spindle Service Request'" ></button>
+						       
+						       </b></h4>
+                                    <p class="text-muted font-13 m-b-30">
+                                    </p>
+                                    <table id="datatable-buttons" class="table table-responsive table-hover shadow p-4 mb-4 bg-white" cellspacing="0" width="100%" style=" border: 1px solid #dee2e6;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                                        <thead>
+                                        <tr>
+                                            <th class="text-center">Sr No</th>
+                                            <th class="text-center">SSC  No</th>
+                                            <th class="text-center">Branch</th>
+                                             <th class="text-center">Serial No</th>
+                                            <th class="text-center">Spindle Details </th>
+                                            <th class="text-center">Customer</th>
+                                         
+                                            <th class="text-center">Reason</th>
+                                             <th class="text-center">Spindle Design </th>
+                                             <th class="text-center">Drive</th>
+                                              <th class="text-center">Mouting Type</th>
+                                              
+                                              
+                                              <th class="text-center">Orientation</th>
+                                         
+                                                <th class="text-center">Engineer</th>
+                                                
+                                             <th class="text-center">Add By</th>
+                                             <th class="text-center">Added On</th>
+                                              <th class="text-center">Status</th>
+                                            <th class="text-center" style="width: 303px;">Action</th>
+                                        
+                                        </tr>
+                                        </thead>
+
+
+                                        <tbody>
+                                        <tr ng-show="vm.spindleServiceReuests.length <= 0"><td colspan="8" style="text-align:center;color:#5D6D7E;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Data Not Found!!
+										<tr dir-paginate="spindleServiceReuest in vm.spindleServiceReuests | filter:q |itemsPerPage:vm.perPage" total-items="vm.total_count" current-page="pagination.current">
+							
+                                           <td class="text-center rowText">{{(vm.perPage*(vm.pageno-1))+($index+1)}}</td>
+                                          <td class="text-center rowText">{{spindleServiceReuest.sscNo}} </td>
+                                           
+                                           <td class="text-center rowText">{{spindleServiceReuest.branch.branchName}} </td>
+                                             <td class="text-center rowText">{{spindleServiceReuest.serialNo}} </td>
+                                           <td class="text-center rowText">{{spindleServiceReuest.spindleBrand}} - {{spindleServiceReuest.spindleModel}}</td>
+                                          <td class="text-center rowText">{{spindleServiceReuest.customer.customerCode}} - {{spindleServiceReuest.customer.companyName}} </td>
+                                        
+                                            <td class="text-center rowText">{{spindleServiceReuest.reason.reasonName}} </td>
+                                            <td class="text-center rowText">{{spindleServiceReuest.spindleDesign}} </td>
+                                            <td class="text-center rowText">{{spindleServiceReuest.drive}} </td>
+                                             <td class="text-center rowText">{{spindleServiceReuest.moutingType}}   </td>
+                                             <td class="text-center rowText">{{spindleServiceReuest.orientation}}  </td>
+                                           <td class="text-center rowText"> {{spindleServiceReuest.engineer.emoloyeeCode}} {{spindleServiceReuest.engineer.fName}} {{spindleServiceReuest.engineer.lName}} </td>
+                                       
+                                            <td class="text-center rowText" style="width:60px;">{{spindleServiceReuest.addedBy}}</td>
+                                              <td class="text-center rowText">{{spindleServiceReuest.addedDate|date:'dd-MM-yyyy'}}</td>
+                                            <td class="text-center">
+                                            	{{spindleServiceReuest.status}}
+                                            
+                                         </td>
+                                           
+
+                                           <td class="text-center" style="width:20%;">
+                                             <!-- <button type="button"class="waves-effect waves-light btn-sm"  ></button> -->
+                                             <md-button class="md-icon-button btn-sm" aria-label="Favorite" style="margin:0 0.5px;"><i class='fas fa-edit'  id="tooltip-touch" title="Edit" ng-click="vm.edit(spindleServiceReuest)" style="font-size:20px;color:#2E4053;"></i></md-button>
+                                           	 
+                                           	        
+                                           	
+                                           	         
+                                           	           
+										  </td>
+                                       </tr>
+                                      
+                                        </tbody>
+                                    </table>
+                                    <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"  ></dir-pagination-controls>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+              
+            </div>
+
+
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+</div>
+
+
+  <!-- Required datatable js -->
+        <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="plugins/datatables/dataTables.bootstrap4.min.js"></script>
+        <!-- Buttons examples -->
+        <script src="plugins/datatables/dataTables.buttons.min.js"></script>
+        <script src="plugins/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="plugins/datatables/jszip.min.js"></script>
+        <script src="plugins/datatables/pdfmake.min.js"></script>
+        <script src="plugins/datatables/vfs_fonts.js"></script>
+        <script src="plugins/datatables/buttons.html5.min.js"></script>
+        <script src="plugins/datatables/buttons.print.min.js"></script>
+        <script src="plugins/datatables/buttons.colVis.min.js"></script>
+        
+        <!-- Responsive examples -->
+        <script src="plugins/datatables/dataTables.responsive.min.js"></script>
+        <script src="plugins/datatables/responsive.bootstrap4.min.js"></script>

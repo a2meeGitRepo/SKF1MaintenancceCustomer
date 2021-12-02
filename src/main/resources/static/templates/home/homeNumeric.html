@@ -1,0 +1,304 @@
+
+<style>
+
+
+
+.container {
+  width:100%;
+  background-color:#D0D3D4;
+  border:1px solid #D4EFDF;
+  border-radius:20px;
+  box-shadow: 5px 4px 8px 0 rgba(0, 0, 0, 0.2), 5px 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.WorkPercent {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+
+.well{
+
+margin-left: -25px;
+    margin-right: -25px;
+    margin-top:-64px;
+    height: 350px;
+    background-color:#3FB4A6;
+}
+
+
+.card-box{
+ margin-top:-150px;
+ margin-left:80px;
+ border-radius:10px; 
+ width:250px;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-delay: -2s; */
+
+}
+
+.card-header{
+border:2px solid #2E86C1;
+color:white;
+text-align:center;
+background-color:#2E86C1;
+}
+
+/* @keyframes example 
+   100% { left:80px; top:-150px;}
+  75%  { left:0px; top:200px;}
+ 
+} */
+
+.row2{
+margin-top:150px;
+height:200px;
+}
+
+.card-allign{
+ margin-left:100px;
+ margin-right:50px;
+}
+.spacer{
+width:100px;
+}
+
+@media only screen and (max-width: 800px) {
+  .card-allign {
+    margin-left:200px;
+  }
+  
+  .card-box{
+ margin-top:-150px;
+ margin-left:80px;
+ border-radius:10px; 
+ width:0px;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-delay: -2s; */
+
+}
+  
+}
+
+.custom-allign{
+
+margin-left:-150px;
+
+
+}
+
+.card_custom{
+
+width:600px;
+background-image:linear-gradient(to right,#FBFCFC ,#FBFCFC );
+}
+
+.card_custom-1{
+
+width:600px;
+background-image:linear-gradient(to right,#FBFCFC ,#FBFCFC );
+}
+
+.arrowStyle{
+
+width:100px;
+height:150px;
+margin-top:-55px;
+ margin-left:80px;
+}
+
+.inputAllign{
+	margin-left:10px;
+	border:2px solid #E9F7EF;
+	border-radius:20px;
+	opacity:1;
+	
+}
+.inputAllign-1{
+margin-left:50px;
+}
+input{
+
+text-align: center;
+}
+
+.btn_align{
+margin-left:800px;
+margin-top:50px;
+border:2px solid #3FB4A6;
+border-radius:20px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+color:white;
+
+}
+
+.content-page{
+height:1500px;
+
+}
+</style>
+
+<div class="sk-folding-cube">
+                                        <div class="sk-cube1 sk-cube"></div>
+                                        <div class="sk-cube2 sk-cube"></div>
+                                        <div class="sk-cube4 sk-cube"></div>
+                                        <div class="sk-cube3 sk-cube"></div>
+                                    </div>
+            
+            <div class="content-page">
+                <div class="content">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="well" class="shadow p-3 mb-5 bg-white rounded" > <!-- page-title-box -->
+                                    <h4 class=" page-title float-left" style="color:white;font-size:28px;margin-top:45px;">Dashboard 1</h4>
+											
+											<div class="btn-group btn_align">
+  												<button type="button" class="btn btn-warning btn-rounded" ><a ui-sref="main.home" ui-sref-active="active" >Graphical</a></button>
+ 												 <button type="button" class="btn btn-success btn-rounded"><a ui-sref="main.homeNumeric" ui-sref-active="active" >Numeric</a></button>  												
+											</div>
+                                       <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+
+					<div class="card-allign">
+                        <div class="row" >
+
+                            <div class="col-md-12 col-sm-6">
+                            <div class="row custom-allign">                            
+                             
+		                            
+		                            
+                            <div class="col-md-3">
+			                              	 
+		                             <div class="card-box">
+                                  		<div class="card-header " style="text-align:center;" ><i class='fa fa-briefcase' style='font-size:36px'></i></div>
+                                  			 <div class="card-body  w3-center w3-animate-left" style="font-size:48px;">{{vm.CounDAtaNumDash.total_assets}}</div> 
+                                                	<div class="card-footer" style="font-size:14px;text-align:center;">Total Assets</div>
+                                    </div>
+		                            </div> 
+		                            
+		                            
+		                            <div class="col-md-3">
+			                              	 
+		                             <div class="card-box" class="shadow p-3 mb-5 bg-white rounded" >
+                                   
+                                   <div class="card-header" style="text-align:center;"><i class="fa fa-users" style='font-size:36px'></i></div>
+                                  			 <div class="card-body w3-center w3-animate-top" style="font-size:48px;">{{vm.CounDAtaNumDash.employee_count}}</div> 
+                             						<div class="card-footer" style="font-size:14px;text-align:center;">Total Employees</div>
+                                     </div>
+		                            </div> 	 
+		                            
+		                            
+		                            
+		                             <div class="col-md-3">
+			                              	 
+		                             <div class="card-box" class="shadow p-3 mb-5 bg-white rounded" >
+                                   
+                             			<div class="card-header" style="text-align:center;"><i class='fa fa-bug' style='font-size:36px'></i></div>
+                                  			 <div class="card-body w3-center w3-animate-top" style="font-size:48px;">{{vm.CounDAtaNumDash.open_complaint_count}}</div> 
+                            						<div class="card-footer" style="font-size:14px;text-align:center;">Total Open Complaints</div>
+                            </div>				
+		                            </div> 	 
+		                            
+		                            
+		                            <div class="col-md-3">
+			                              	 
+		                             <div class="card-box" class="shadow p-3 mb-5 bg-white rounded" >
+                                    
+                                    	<div class="card-header" style="text-align:center;"><i class='fa fa-check-square' style='font-size:36px'></i></div>
+                                  			 <div class="card-body w3-center w3-animate-right" style="font-size:48px;">{{vm.CounDAtaNumDash.cloase_complaint_count}}</div> 
+                             						<div class="card-footer" style="font-size:14px;text-align:center;">Total Close Complaints</div>
+                                    </div>
+		                           </div> 		                            
+		                 
+                               </div> 
+                               
+                               
+                     <div class="row row2 custom-allign"> 
+                                
+                                
+                                <div class="col-md-3">
+			                              	 
+		                             <div class="card-box" class="shadow p-3 mb-5 bg-white rounded" >
+                                    
+                                    	<div class="card-header"  style="text-align:center;"><i class='fa fa-file-text' style='font-size:36px'></i></div>
+                                  			 <div class="card-body w3-center w3-animate-left" style="font-size:48px;">{{vm.CounDAtaNumDash.grn_count}}</div> 
+                             						<div class="card-footer" style="font-size:14px;text-align:center;">Total GRN</div>
+                                    </div>
+		                           </div> 	
+                               
+                                
+                                 <div class="col-md-3">
+			                              	 
+		                             <div class="card-box" class="shadow p-3 mb-5 bg-white rounded" >
+                                    
+                                    	<div class="card-header" style="text-align:center;"><i class="fa fa-drivers-license" style="font-size:36px"></i></div>
+                                  			 <div class="card-body w3-center w3-animate-bottom" style="font-size:48px;">{{vm.CounDAtaNumDash.gate_pass_count}}</div> 
+                             						<div class="card-footer" style="font-size:14px;text-align:center;">Total GatePass Count</div>
+                                    </div>
+		                           </div> 	
+		                           
+		                           
+		                            <div class="col-md-3">
+			                              	 
+		                             <div class="card-box" class="shadow p-3 mb-5 bg-white rounded" >
+                                    
+                                    	<div class="card-header" style="text-align:center;"><i class="fa fa-drivers-license" style="font-size:36px"></i></div>
+                                  			 <div class="card-body w3-center w3-animate-bottom" style="font-size:48px;">{{vm.CounDAtaNumDash.pending_gatepass}}</div> 
+                             					<div class="card-footer" style="font-size:14px;text-align:center;">Total Pending GatePass</div>
+                                    </div>
+		                           </div> 	
+                                
+                                
+                                 <div class="col-md-3">
+			                              	 
+		                             <div class="card-box" class="shadow p-3 mb-5 bg-white rounded" >
+                                    
+                                    	<div class="card-header" style="text-align:center;"><i class="fa fa-desktop" style="font-size:36px"></i></div>
+                                  			 <div class="card-body w3-center w3-animate-right" style="font-size:48px;">{{vm.CounDAtaNumDash.bYOD_Count}}</div> 
+                             					<div class="card-footer" style="font-size:14px;text-align:center;">Total BYOD</div>
+                                    </div>
+		                           </div> 	
+                                
+                                
+                    </div>
+                                
+                                
+                   <!--  <div class="row row2 custom-allign">   
+                                 
+                                 <div class="card-box card_custom-1" >
+                                    
+                                   
+                                   
+                               
+                          
+                                   
+                               </div>                           
+                            
+                            
+					
+                    </div> -->
+                            
+                            
+                  </div>
+
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+         
+  		  
+           
+ 

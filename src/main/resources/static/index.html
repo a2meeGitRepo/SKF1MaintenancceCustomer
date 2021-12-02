@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" class="no-js">
+    
+<!-- Mirrored from coderthemes.com/adminox/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Apr 2019 13:33:30 GMT -->
+<head>
+
+<!-- TEMPLATE ASSETS START -->
+        <meta charset="utf-8" />
+        <title>SKF Customer</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!-- App favicon -->
+        <!-- C3 charts css -->
+        <link href="plugins/c3/c3.min.css" rel="stylesheet" type="text/css"  />
+ 	 <!-- Tooltipster css -->
+ 	   <link data-require="bootstrap-css@3.1.1" data-semver="3.1.1" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+ 	 
+        <link rel="stylesheet" href="plugins/tooltipster/tooltipster.bundle.min.css">
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+        
+ 			<link rel="stylesheet" href="assets/css/dataTable.css">
+	
+	<link rel="stylesheet" type="text/css" href="assets/css/jquery.dataTables.min.css">	
+	<link rel="stylesheet" type="text/css" href="bower_components/angular-datatables/dist/css/angular-datatables.min.css">
+	
+ 		
+ 		
+         <!-- W3 css -->
+         <link href="assets/css/W3Css.css" rel="stylesheet" type="text/css" />
+         
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         
+          <!-- W3 Icon css -->
+         <link href="assets/css/w3icons.css" rel="stylesheet" type="text/css" />
+         
+          <!-- custom css -->
+         <link rel="stylesheet" href="assets/css/custom.css" type="text/css" >
+         
+         <!-- W3 Icon FAS css -->
+       <script src="https://kit.fontawesome.com/6f1f0c3f61.js" crossorigin="anonymous"></script>
+
+        <script src="assets/js/modernizr.min.js"></script>
+      <!--  <script src="assets/js/jquery.app.min.js"></script> -->
+          <script src="assets/js/bootstrap.min.js"></script>
+          <script src="assets/js/jquery.core.js"></script>
+            <script src="assets/js/jquery.min.js"></script>
+          <script src="assets/js/modernizr.min.js"></script>
+             <script src="assets/js/popper.min.js"></script>
+             <script src="assets/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="assets/js/dataTables.bootstrap4.min.js"></script>
+     <!-- --------------------------Form wizard--------------------------------- -->
+		<!-- <script src="assets/js/vendor.min.js"></script> -->
+  		<!-- <script src="assets/libs/stepy/jquery.stepy.js"></script>  
+        <script src="assets/pages/jquery.wizard-init.js"></script> -->
+        <script src="assets/js/app.min.js"></script>
+      
+           
+  <!-- TEMPLATE ASSETS END -->
+  <!-- ANGULAR ASSETS START -->
+		<script src="bower_components/angular/angular.min.js"></script>
+		<script src="bower_components/angular-loader/angular-loader.min.js"></script>
+		<script src="bower_components/angular-mocks/angular-mocks.js"></script>
+		<script src="bower_components/angular-route/angular-route.min.js"></script>
+		<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+		<script src="bower_components/angularUtils-pagination/dirPagination.js"></script>
+		<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+		<script src="bower_components/chart.js/dist/Chart.min.js"></script>
+		<script	src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
+		<script src="bower_components/tinymce/tinymce.min.js"></script>
+ 		<script src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
+ 		<script src="bower_components/md-steppers/md-steppers.js"></script>
+ 		
+ 		<link rel="stylesheet" href="assets/css/dataTable.css">
+	
+	<link rel="stylesheet" type="text/css" href="assets/css/jquery.dataTables.min.css">	
+	<link rel="stylesheet" type="text/css" href="bower_components/angular-datatables/dist/css/angular-datatables.min.css">
+		<script src="bower_components/angular-datatables/dist/angular-datatables.min.js"></script>
+	
+<script src="assets/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="assets/js/dataTables.bootstrap4.min.js"></script>
+ 		
+ 		
+		<link rel="stylesheet" type="text/css" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+		<script type="text/javascript" src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+		<script src="js/ui-bootstrap-tpls-2.1.4.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-sanitize.js"></script>
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css"> <!-- ANGULAR ASSETS END  -->      
+<!-- Angular Material requires Angular.js Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  
+  <script src="bower_components/angular_materials/angular-material.min.js"></script>
+ <!--  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script> -->
+
+				<!-- DATA TABLE START -->
+					  <link href="plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+				        <link href="plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+				        <!-- Responsive datatable examples -->
+				        <link href="plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+				<!-- DATA TABLE END  -->
+				<!--------------------------------------- -mdStepper css ----------------------------------------------->
+			<!-- <link	href="plugins/md-stepper/md-stepper.css" rel="stylesheet" type="text/css"> -->
+
+<script src="bower_components/qrcode/lib/qrcode.min.js"></script>
+<script src="bower_components/angular-qr/angular-qr.min.js"></script>
+
+<!-- ********* DATA MATRIX ********** -->
+<script src="node_modules/bwip-js/freetype.js"></script>
+<script src="node_modules/bwip-js/bwip.js"></script>
+<script src="node_modules/bwip-js/lib/canvas.js"></script>
+<script src="node_modules/td-angular-barcode/dist/td-barcode.js"></script>
+<!-- ********* DATA MATRIX ********** -->
+
+
+
+<script src="templates/app.js"></script>
+<!-- Main Start -->
+<script src="templates/main/main.module.js"></script>
+<script src="templates/main/main.controller.js"></script>
+<!-- Main End -->
+
+<!-- home Start -->
+<script src="templates/home/home.module.js"></script>
+<script src="templates/home/home.controller.js"></script>
+<!-- home End -->
+
+<!-- Generic Start -->
+<script src="templates/generic/generic.module.js"></script>
+<script src="templates/generic/generic.factory.js"></script>
+<script src="templates/generic/generic.http.js"></script>
+<script src="templates/generic/FileSaver.js"></script>
+<script src="templates/generic/json-export-excel.js"></script>
+
+<!-- Generic End -->
+<!-- Login form Start -->
+<script src="templates/login/login.module.js"></script>
+<script src="templates/login/login.controller.js"></script>
+<script src="templates/login/login.factory.js"></script>
+<script src="templates/login/login.http.js"></script>
+<!-- Login form End -->
+
+
+
+<script src="templates/myDestails/myDestails.module.js"></script>
+<script src="templates/myDestails/myDestails.controller.js"></script>
+
+
+
+
+<script src="templates/spindleServiceRequest/spindleServiceRequest.module.js"></script>
+<script src="templates/spindleServiceRequest/spindleServiceRequest.controller.js"></script>
+
+
+
+
+    <body>
+
+<div ui-view="main"></div>
+        <!-- jQuery  -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script><!-- Popper for Bootstrap -->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/metisMenu.min.js"></script>
+        <script src="assets/js/waves.js"></script>
+        <script src="assets/js/jquery.slimscroll.js"></script>
+
+			<!-- DATA TABLES  START-->
+			 <!-- Required datatable js -->
+			        <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+			        <script src="plugins/datatables/dataTables.bootstrap4.min.js"></script>
+			        <!-- Buttons examples -->
+			        <script src="plugins/datatables/dataTables.buttons.min.js"></script>
+			        <script src="plugins/datatables/buttons.bootstrap4.min.js"></script>
+			        <script src="plugins/datatables/jszip.min.js"></script>
+			        <script src="plugins/datatables/pdfmake.min.js"></script>
+			        <script src="plugins/datatables/vfs_fonts.js"></script>
+			        <script src="plugins/datatables/buttons.html5.min.js"></script>
+			        <script src="plugins/datatables/buttons.print.min.js"></script>
+			        <script src="plugins/datatables/buttons.colVis.min.js"></script>
+			<!-- DATA TABLE END -->
+			
+			
+			  <!-- Tooltipster js -->
+        <script src="plugins/tooltipster/tooltipster.bundle.min.js"></script>
+        <script src="assets/pages/jquery.tooltipster.js"></script>
+        
+        <!-- -------------------------------Chart.js -------------------------->
+        <script src="js/chartsJs/chart.js"></script>
+        
+        
+        <script src="plugins/datatables/dataTables.responsive.min.js"></script>
+        <script src="plugins/datatables/responsive.bootstrap4.min.js"></script>
+        <!--C3 Chart-->
+        <script type="text/javascript" src="plugins/d3/d3.min.js"></script>
+        <script type="text/javascript" src="plugins/c3/c3.min.js"></script>
+
+        <!--Echart Chart-->
+        <script src="plugins/echart/echarts-all.js"></script>
+
+        <!-- Dashboard init -->
+        <script src="assets/pages/jquery.dashboard.js"></script>
+
+        <!-- App js -->
+       
+        <script src="assets/js/jquery.core.js"></script>
+        <script src="assets/js/jquery.app.js"></script>
+
+    </body>
+
+<!-- Mirrored from coderthemes.com/adminox/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Apr 2019 13:34:00 GMT -->
+</html>

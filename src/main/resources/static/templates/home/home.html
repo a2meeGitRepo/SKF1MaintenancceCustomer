@@ -1,0 +1,389 @@
+<style>
+
+
+
+.container {
+  width:100%;
+  background-color:#D0D3D4;
+  border:1px solid #D4EFDF;
+  border-radius:20px;
+  box-shadow: 5px 4px 8px 0 rgba(0, 0, 0, 0.2), 5px 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height:10%
+}
+
+.WorkPercent {
+  text-align: center;
+  padding-top: 1px;
+  padding-bottom: 19px;
+  color:#212F3D;
+  font-size:14px;
+}
+
+
+.well{
+
+margin-left: -25px;
+    margin-right: -25px;
+    margin-top:-64px;
+    height: 350px;
+    background-color:#253c7e;
+}
+
+
+.card-box{
+ margin-top:-150px;
+ margin-left:80px;
+ border-radius:10px; 
+ width:250px;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-delay: -2s; */
+
+}
+
+/* @keyframes example 
+   100% { left:80px; top:-150px;}
+  75%  { left:0px; top:200px;}
+ 
+} */
+
+.row2{
+margin-top:150px;
+height:220px;
+}
+
+.card-allign{
+ margin-left:100px;
+ margin-right:50px;
+}
+.spacer{
+width:100px;
+}
+
+@media only screen and (max-width: 800px) {
+  .card-allign {
+    margin-left:200px;
+  }
+  
+  .card-box{
+ margin-top:-150px;
+ margin-left:80px;
+ border-radius:10px; 
+ width:0px;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-delay: -2s; */
+
+}
+  
+}
+
+.custom-allign{
+
+margin-left:-170px;
+
+
+}
+
+.custom-allign-1{
+
+margin-left:-190px;
+
+
+}
+
+.card_custom{
+
+width:600px;
+background-image:linear-gradient(to right,#FBFCFC ,#FBFCFC );
+}
+
+.card_custom-1{
+
+width:600px;
+background-image:linear-gradient(to right,#FBFCFC ,#FBFCFC );
+}
+
+.card_custom-1-1{
+height:370px;
+width:600px;
+}
+
+.card_custom-2{
+width:600px;
+height:450px;
+background-image:linear-gradient(to right,#FBFCFC ,#FBFCFC );
+}
+
+.arrowStyle{
+
+width:100px;
+height:150px;
+margin-top:-55px;
+ margin-left:80px;
+}
+
+.inputAllign{
+	margin-left:10px;
+	border:2px solid #E9F7EF;
+	border-radius:20px;
+	opacity:1;
+	
+}
+.inputAllign-1{
+margin-left:50px;
+}
+input{
+
+text-align: center;
+}
+
+.btn_align{
+margin-left:800px;
+margin-top:50px;
+border:2px solid #3FB4A6;
+border-radius:20px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+color:white;
+
+}
+
+.content-page{
+height:1500px;
+
+}
+</style>
+
+<div class="sk-folding-cube">
+                                        <div class="sk-cube1 sk-cube"></div>
+                                        <div class="sk-cube2 sk-cube"></div>
+                                        <div class="sk-cube4 sk-cube"></div>
+                                        <div class="sk-cube3 sk-cube"></div>
+                                    </div>
+            
+            <div class="content-page">
+                <div class="content">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="well" class="shadow p-3 mb-5 bg-white rounded" > <!-- page-title-box -->
+                                    <h4 class=" page-title float-left" style="color:white;font-size:28px;margin-top:45px;">Dashboard </h4>
+
+										<div class="btn-group btn_align">
+  											<button type="button" class="btn btn-warning btn-rounded"><a ui-sref="main.home" ui-sref-active="active" >Graphical</a></button>
+ 											 <button type="button" class="btn btn-success btn-rounded"><a ui-sref="main.homeNumeric" ui-sref-active="active" >Numeric</a></button>  												
+										</div>
+										
+                                       <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+
+					<div class="card-allign">
+                        <div class="row" >
+
+                            <div class="col-md-12 col-sm-6">
+                            <div class="row custom-allign">                            
+                             
+		                            
+		                            
+                            <div class="col-md-3">
+			                              	 
+		                             <div class="card-box">
+                                    <h4 class="header-title m-t-0 m-b-30">Status wise Assets <small class="pull-right">Total :<button type="button" class="btn-xs btn-icon waves-effect waves-light btn-purple">{{totalAsset}}</button></small></h4>
+
+                                   
+                                    <div class="chart-container">
+                                         <canvas id="pie" class="chart chart-pie" chart-options="vm.chartPieOptions" chart-data="vm.chartPieCharts" chart-colours="vm.statusPieColours" chart-labels="vm.statusPieLabels"></canvas>
+                                    </div>
+                             
+                            </div>
+		                            </div> 
+		                            
+		                            
+		                            <div class="col-md-3">
+			                              	 
+		                             <div class="card-box" class="shadow p-3 mb-5 bg-white rounded" >
+                                    <h4 class="header-title m-t-0 m-b-30">Allocated Assets <small class="pull-right">Total :<button type="button" class="btn-xs btn-icon waves-effect waves-light btn-purple"> {{totalAsset}}</button></small></h4>
+
+                                   
+                                    <div class="chart-container">
+                                         <canvas id="pie" class="chart chart-pie" chart-options="vm.chartPieAllocatedOptions" chart-data="vm.chartPieAllocatedCharts" chart-colours="vm.statusAllocatedPieColours" chart-labels="vm.statusAllocatedPieLabels"></canvas>
+                                    </div>
+                             
+                            </div>
+		                            </div> 	 
+		                            
+		                            
+		                            
+		                             <div class="col-md-3">
+			                              	 
+		                             <div class="card-box" class="shadow p-3 mb-5 bg-white rounded" >
+                                    <h4 class="header-title m-t-0 m-b-30">Complaint type <small class="pull-right">Total :<button type="button" class="btn-xs btn-icon waves-effect waves-light btn-purple"> {{total_complaints}}</button></small></h4>
+
+                                   
+                                    <div class="chart-container">
+                                         <canvas id="pie" class="chart chart-pie" chart-options="vm.chartPieComplaintOptions" chart-data="vm.chartPieComplaintCharts" chart-colours="vm.statusComplaintPieColours" chart-labels=" vm.statusComplaintPieLabels"></canvas>
+                                    </div>
+                             
+                            </div>
+		                            </div> 	 
+		                            
+		                            
+		                            <div class="col-md-3">
+			                              	 
+		                             <div class="card-box" class="shadow p-3 mb-5 bg-white rounded" >
+                                    <h4 class="header-title m-t-0 m-b-30">Assets Wise Allocation <small class="pull-right">Total :<button type="button" class="btn-xs btn-icon waves-effect waves-light btn-purple"> {{total_alocated_asset}}</button></small></h4>
+
+                                   
+                                    <div class="chart-container">
+                                         <canvas id="pie" class="chart chart-pie" chart-options="vm.chartPieAssetWiseAllocatedOptions" chart-data="vm.chartPieAssetWiseAllocatedCharts" chart-colours="vm.statusAssetWiseAllocatedPieColours" chart-labels=" vm.statusAssetWiseAllocatedPieLabels "></canvas>
+                                    </div>
+                             
+                            </div>
+		                            </div> 	
+		                      
+                               </div> 
+                               
+                              
+                                <div class="row row2 custom-allign-1"> 
+                                
+                                <div class="col-md-6 ">
+                                
+                                 <div class="card-box card_custom" >
+                                    <h4 class="header-title m-t-0 m-b-30">P.O. History <i class='far fa-calendar-alt inputAllign-1' style='font-size:18px'>:</i><input class="inputAllign" type="text" ng-model="year" placeholder="Enter Year " ng-change="vm.loadMaterialPOhistory(year)"> <small class="pull-right">Total :<button type="button" class="btn-xs btn-icon waves-effect waves-light btn-purple"> {{totalPo}}</button></small></h4>
+
+                                   
+                                    <div class="chart-container " style="width:500px;height:250px;">
+                                         <canvas id="pie" class="chart chart-line"  chart-options="vm.materialPOLineOptions" chart-data="vm.materialPOLine" chart-colours="vm.materialPOLineColours" chart-labels=" vm.materialPOLineLabels "></canvas>
+                                    </div>
+                             
+                            </div>
+                                
+                                </div>
+                              
+                                 <div class="col-md-6">
+                                
+                                 <div class="card-box card_custom-1" >
+                                    <h4 class="header-title m-t-0 m-b-30">Resale History <i class='far fa-calendar-alt inputAllign-1' style='font-size:18px'>:</i><input class="inputAllign" type="text" ng-model="year1" placeholder="Enter Year " ng-change="vm.loadMaterialResalehistory(year1)"> <small class="pull-right">Total :<button type="button" class="btn-xs btn-icon waves-effect waves-light btn-purple"> {{totalResale}}</button></small></h4>
+
+                                   
+                                    <div class="chart-container " style="width:500px;height:250px;">
+                                         <canvas id="pie" class="chart chart-line"  chart-options="vm.materialResaleLineOptions" chart-data="vm.materialResaleLine" chart-colours="vm.materialResaleLineColours" chart-labels="vm.materialResaleLineLabels"></canvas>
+                                    </div>
+                             
+                            </div>
+                                
+                                </div>
+                                
+                                
+                                
+                                
+                                </div>
+                                
+                                
+                                 <div class="row row2 custom-allign-1">   
+                                 <div class="col-md-6">
+                                 <div class="card-box card_custom-2" >
+                                    <h4 class="header-title m-t-0 m-b-30">Engineer ProgressBar  <label>  Select Engineer</label> 
+                                    
+                                    <select class="form-control"
+											ng-model="home.engineer" id="engineer" ng-change="vm.getSelectedEmployeeData(home.engineer)"
+											ng-options="engineer as engineer.fName+ ' '+engineer.lName for engineer in vm.engineers"
+											style="height: calc(2.25rem + 14px)" required>
+											<option value="" disabled selected>Select Engineer </option>
+																			
+									</select>
+                                    <p></p>
+                                    <small class="pull-right">Total :<button type="button" class="btn-xs btn-icon waves-effect waves-light btn-purple"> {{vm.engineersData.total_comp_for_eng}}</button></small></h4>
+
+                                   
+                                    <div style="width:500px;height:250px;">
+                                       
+                                       		<p>Closed Complaints</p>
+											<div class="container">
+											  <div class="WorkPercent" ng-style="closeCss" style="height:10%;">{{vm.engineersData.progress_bar_close+"%"}}</div>
+											</div>
+											<p></p>
+											<p>Open Complaints</p>
+											<div class="container">
+											  <div class="WorkPercent" ng-style="openCss" style="height:10%;">{{vm.engineersData.progress_bar_open+"%"}}</div>
+											</div>
+											<p></p>
+											<p>Complaints InProcess</p>
+											<div class="container">
+											  <div class="WorkPercent" ng-style="inProCss" style="height:10%;">{{vm.engineersData.progress_bar_inProcess+"%"}}</div>									  
+										
+                            				</div>
+                                 
+                                			 <p></p>
+											<p>Pending Complaints</p>
+											<div class="container">
+											  <div class="WorkPercent" ng-style="pendCss" style="height:10%;">{{vm.engineersData.progress_bar_pending+"%"}}</div>									  
+										
+                            				</div>
+                                 
+                                 
+					</div>
+                               
+                          
+                                   
+                            </div>                           
+                            </div>
+                            
+                             <div class="col-md-6">
+                                
+                                 <div class="card-box card_custom-1-1" >
+                                    <h4 class="header-title m-t-0 m-b-30">P.O. Cost for material <i class='far fa-calendar-alt inputAllign-1' style='font-size:18px'>:</i><input class="inputAllign" type="text" ng-model="year2" placeholder="Enter Year " ng-change="vm.loadmaterialCosthistory(year2)"> <small class="pull-right">Total :<button type="button" class="btn-xs btn-icon waves-effect waves-light btn-purple"> {{totalCostPerYear}}</button></small></h4>
+
+                                   
+                                    <div class="chart-container" style="width:500px;height:250px;">
+                                         <canvas id="pie" class="chart chart-line"  style="height:550px;" chart-options="vm.materialCosLineOptions" chart-data="vm.materialCostLine" chart-colours="vm.materialCostLineColours" chart-labels=" vm.materialCostLineLabels"></canvas>
+                                    </div>
+                             
+                            </div>
+                                
+                                </div>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+					
+                            </div>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                  </div>
+
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+         
+  		  
+           
+ 

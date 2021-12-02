@@ -1,0 +1,330 @@
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+ 
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+.button-style{
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.rowText{
+text-align:center;
+color:#424949;
+font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
+Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+th{
+background-color:#73C6B6;
+color:white;
+text-align:center;
+font-size:14px;
+font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
+Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card-box{
+border: 2px solid #73C6B6;
+border-radius:10px;
+
+}
+
+tr:hover{
+background-color:#FFFFFF;
+box-shadow: 0 4px 8px 0 #76D7C4, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+i:hover{
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+} 
+
+input:hover{
+background-color:#F4F6F6;
+border:2px solid #2C3E50;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+select:hover{
+background-color:#F4F6F6;
+border:2px solid #2C3E50;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input.mandtry:hover{
+background-color:#F4F6F6;
+border:2px solid #2C3E50;
+box-shadow: 0 4px 8px 0 #FFAFAA, 0 6px 20px 0 #FFAFAA;
+}
+
+select.mandtry:hover{
+background-color:#F4F6F6;
+border:2px solid #2C3E50;
+box-shadow: 0 4px 8px 0 #FFAFAA, 0 6px 20px 0 #FFAFAA;
+}
+textarea:hover{
+background-color:#F4F6F6;
+border:2px solid #2C3E50;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.avatar{
+vertical-align: middle;
+  width: 100px;
+  height: 90px;
+  border-radius: 10%;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input{
+border:2px solid #EAEDED;
+border-radius:20px;
+font-size:14px;
+ffont-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
+Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+label{
+font-size:14px;
+font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
+Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+hr{
+font-size:18px;
+border-top:1px solid #F5B041 ;
+
+}
+
+.vl{
+border-left: 2px solid #F0B27A;
+  height: 20px;
+ margin-left:100px;
+}
+
+</style>
+    <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box button-style">
+                                    <h4 class="page-title float-left">Customer </h4>
+
+                                    
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+                            </div>
+                        </div>
+                        
+                        
+                   
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+<!-- start add  row -->
+                          <div class="row" style="margin-right: 10px;
+  margin-left: 10px;" >
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    
+
+                                   				 <div class="row">
+						                            <div class="col-md-12">
+						                                <div class="card-box">
+						                                <h1 class="card-header" style="text-align: center;padding-top:-10px;">Customer Registration</h1>						                                   
+
+						                                   
+						 									
+						                                    <form class="card-body'" style="padding-top:30px;padding-bottom:20px;">
+						                                   
+						                                   <!-- -----------------------------------------1------------------------------ -->
+						                                   <legend class="dotted"">My  Details</legend>
+						                                        
+						                                          <div class="form-row">						                                          
+						                                          <div class="form-group col-md-3">
+						                                                <label for="inputState" class="col-form-label">Branch</label> 
+						                                               <select class="form-control mandtry"
+																			ng-model="customer.branch.branchId" id="branch"
+																			ng-options="branch.branchId as branch.branchName for branch in vm.branches"
+																			style="height: calc(2.25rem + 14px)" required>
+																			<option value="" disabled selected>Select Branch</option>
+																		</select>
+																		<span ng-show="branchErr" style="color:red">  * Branch is mandatory</span>
+						                                            </div>
+						                                           <div class="form-group col-md-3">
+						                                                <label for="inputCity" class="col-form-label">Customer Code</label> 
+						                                                <input type="text" class="form-control mandtry" id="custCode" ng-model="customer.customerCode"   placeholder="Enter Customer Code"  ng-disabled="editView">
+						                                             <span ng-show="custCodeErr" style="color:red">  * Customer Code is mandatory</span>
+						                                            </div>
+						                                            
+						                                        <div class="form-group col-md-3">
+						                                                <label for="inputCity" class="col-form-label">Company Name</label>
+						                                                <input type="text" class="form-control mandtry" id="compname" ng-model="customer.companyName"   placeholder="Enter Company Name" ng-blur="capitalName(customer.companyName)">
+						                                             <span ng-show="comNameErr" style="color:red">  * Company Name is mandatory</span>
+						                                            </div>
+						                                             <div class="form-group col-md-3">
+						                                                <label for="inputCity" class="col-form-label">Contact Person </label>
+						                                                <input type="text" class="form-control mandtry" id="conPerson" ng-model="customer.contactPerson"   placeholder="Enter Contact Person" >
+						                                             <span ng-show="conPerErr" style="color:red">  * Contact Person is mandatory</span>
+						                                            </div>
+						                                               
+						                                          
+						                                           
+						                                        </div>
+						                                        
+						                                       
+						                                    <div class="form-row">
+						                                    
+						                                      
+						                                    <div class="form-group col-md-3">
+						                                                <label for="inputCity" class="col-form-label">Mobile No</label>
+						                                                <input type="number" class="form-control mandtry" id="mobileNo" ng-model="customer.phoneNo"  ng-blur="validateContatNo(customer.phoneNo)" placeholder="Enter Mobile No">
+						                                            	 <span ng-show="invalidMoNo" style="color:red">  * {{contactNo1ErrMsg}}</span>
+						                                            	 <span ng-show="MoNoErr" style="color:red">  * is mandatory</span>
+						                                            
+						                                            </div>
+						                                             <div class="form-group col-md-3">
+						                                                <label for="inputCity" class="col-form-label">Email Id</label>
+						                                                <input type="email" class="form-control mandtry" id="email" ng-model="customer.emailId"  ng-blur="validateEmail(customer.emailId)"; placeholder="Enter Email Id">
+						                                         		 <span ng-show="emialErr" style="color:red">  * Invalid Email ID</span>
+						                                         		<span ng-show="emailErr" style="color:red">  * is mandatory</span>
+						                                            </div>
+						                                    
+						                                          					                                           						                               		 									
+						                                           
+						                                        </div>
+						                                        
+						                           <!-- -----------------------------------------2------------------------------ -->
+	
+						                                        <legend class="dotted" style="margin-top:40px;">Address Details</legend>
+		
+						                                     	<div class="form-row ">
+						                                             <div class="form-group col-md-6">
+						                                                <label for="inputCity" class="col-form-label">Address</label> 
+						                                                <textarea class="form-control mandtry" id="custCode" ng-model="customer.address"   placeholder="Enter Address" ></textarea>
+						                                             <span ng-show="addressErr" style="color:red">  * Address is mandatory</span>
+						                                            </div>
+						                                          
+						                                            <div class="form-group col-md-3">
+						                                                <label for="inputState" class="col-form-label">State</label>
+						                                               <select class="form-control mandtry"
+																			ng-model="customer.city.state.stateId" id="state"
+																			ng-options="state.stateId as state.stateName for state in vm.states" ng-change="loadCities(customer.city.state.stateId)"
+																			style="height: calc(2.25rem + 14px)" required>
+																			<option value="" disabled selected>Select State</option>
+																		</select>
+						                                            </div>
+						                                            
+						                                              <div class="form-group col-md-3">
+						                                                <label for="inputState" class="col-form-label">City</label>
+						                                               <select class="form-control mandtry"
+																			ng-model="customer.city.cityId" id="city"
+																			ng-options="city.cityId as city.cityName for city in vm.cities"
+																			style="height: calc(2.25rem + 14px)" required>
+																			<option value="" disabled selected>Select City</option>
+																		</select>
+																		<span ng-show="cityErr" style="color:red">  * City is mandatory</span>
+						                                            </div>
+						                                            
+						                                          
+						                                            <div class="form-group col-md-3">
+						                                                <label for="inputCity" class="col-form-label">Pin code</label>
+						                                                <input type="text" class="form-control mandtry" id="pincode" ng-model="customer.pincode"  placeholder="Enter Pin code">
+						                                           
+						                                            </div>
+						                                             
+						                                          
+						                                           
+						                                        </div>
+						                                        
+						                                        
+						                                       
+						                                       
+						                                        <div class="form-row">					                                            
+						                                            
+						                                           
+						                                        </div>
+						                                        <div class="row">
+						                                        </div>
+						                                         <div class="row card-footer" >
+						                                      
+						                                         <div class="form-group col-md-0" style="margin-top:20px;margin-left:450px;">
+						                                         	 <button type="button" class="btn btn-success btn-rounded waves-effect w-md waves-light button-style" type="submit" ng-click="vm.update(customer)" ng-disabled="disabledClick"><i class='fas fa-save' style='font-size:16px;margin:0 2px;'></i>Save</button>
+						                                         
+						                                         </div>
+						                                        
+						                                       
+						                                        </div>
+						                                       
+						                                    </form>
+						                                </div>
+						                            </div>
+						                        </div>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                     
+                       
+
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+              
+            </div>
+
+
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+</div>
+
+
+  <!-- Required datatable js -->
+        <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="plugins/datatables/dataTables.bootstrap4.min.js"></script>
+        <!-- Buttons examples -->
+        <script src="plugins/datatables/dataTables.buttons.min.js"></script>
+        <script src="plugins/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="plugins/datatables/jszip.min.js"></script>
+        <script src="plugins/datatables/pdfmake.min.js"></script>
+        <script src="plugins/datatables/vfs_fonts.js"></script>
+        <script src="plugins/datatables/buttons.html5.min.js"></script>
+        <script src="plugins/datatables/buttons.print.min.js"></script>
+        <script src="plugins/datatables/buttons.colVis.min.js"></script>
+        
+        <!-- Responsive examples -->
+        <script src="plugins/datatables/dataTables.responsive.min.js"></script>
+        <script src="plugins/datatables/responsive.bootstrap4.min.js"></script>
